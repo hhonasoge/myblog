@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% if blogposts %}
+{% for post in blogposts %}
+<div class="post">
+    <h3><a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a></h3>>
+</div>
+            <!-- <li><a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a></li> -->
+{% endfor %}
+{% else %}
+<p>No posts are available.</p>
+{% endif %}
