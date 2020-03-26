@@ -25,7 +25,7 @@ SECRET_KEY = 'a1t&7vw&wt6w=$)&au&_@i!tze5tb-h3n(d7z@ujdf-4cc27(l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'myblog-dev.us-west-1.elasticbeanstalk.com', '172.31.5.217']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -118,4 +118,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
